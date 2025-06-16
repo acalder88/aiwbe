@@ -76,6 +76,10 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
   }
 });
 
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
 app.listen(port, () => {
   console.log(`Backend listening on port ${port}`);
 });
