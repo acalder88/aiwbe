@@ -34,11 +34,11 @@ try {
 
 // --- Fin de la simulación de RAG ---
 
-const USERS = [{ username: 'admin', password: 'password' }];
+const USERS = [{ username: 'admin', password: 'gordilicious123' }];
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
-  const user = USERS.find(u => u.username === username && u.password === gordilicious123);
+  const user = USERS.find(u => u.username === username && u.password === password);
   if (!user) return res.status(401).json({ error: 'Invalid credentials' });
   const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '1h' });
   res.json({ token });
