@@ -38,7 +38,7 @@ const USERS = [{ username: 'admin', password: 'password' }];
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
-  const user = USERS.find(u => u.username === username && u.password === password);
+  const user = USERS.find(u => u.username === username && u.password === gordilicious123);
   if (!user) return res.status(401).json({ error: 'Invalid credentials' });
   const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '1h' });
   res.json({ token });
